@@ -5,8 +5,8 @@ import io
 import sys
 import datetime
 import uuid
-import urllib
-from PIL import Image
+import urllib                       
+from PIL import Image              #external dependency
 from decimal import Decimal
 import json
 from pprint import pprint
@@ -15,18 +15,18 @@ rekognition = boto3.client('rekognition')
 s3 = boto3.client('s3')
 dynamodb = boto3.client('dynamodb')
 i = datetime.datetime.now()
-ptr= i.strftime("%d-%m-%y     %H:%M:%S (UTC)")
+ptr= i.strftime("%d-%m-%y     %H:%M:%S (UTC)")              #string to record time
     
-image = Image.open("group1.jpeg")
+image = Image.open("group1.jpeg")                       #local file group1.jpeg
 stream = io.BytesIO()
 image.save(stream,format="JPEG")
 image_binary = stream.getvalue()
 
 response = rekognition.detect_faces(
-    Image={'Bytes':image_binary}                                        
+    Image={'Bytes':image_binary}                        #face detection                                
         )
     
-all_faces=response['FaceDetails']
+all_faces=response['FaceDetails']                       #saved face detection results
     
 # Initialize list object
 boxes = []
@@ -38,11 +38,11 @@ image_height = image.size[1]
 # Crop face from image
 for face in all_faces:
     box=face['BoundingBox']
-    x1 = int(box['Left'] * image_width) * 0.9
+    x1 = int(box['Left'] * image_width) * 0.9                   #increasing the dimeansions of bounding boxes
     y1 = int(box['Top'] * image_height) * 0.9
     x2 = int(box['Left'] * image_width + box['Width'] * image_width) * 1.10
     y2 = int(box['Top'] * image_height + box['Height']  * image_height) * 1.10
-    image_crop = image.crop((x1,y1,x2,y2))
+    image_crop = image.crop((x1,y1,x2,y2))                      # cropping faces
     
     stream = io.BytesIO()
     image_crop.save(stream,format="JPEG")
@@ -52,7 +52,7 @@ for face in all_faces:
     response = rekognition.search_faces_by_image(
             CollectionId='class_collection',
             Image={'Bytes':image_crop_binary}                                       
-            )
+            )                                               #comparision
     
     if len(response['FaceMatches']) > 0:
         # Return results
@@ -69,7 +69,7 @@ for face in all_faces:
                 dynamodb.put_item(
                      TableName='present',
                      Item={
-                          'roll_number': {'S': person},
+                          'roll_number': {'S': person},                     #storing in database
                           'confidence': {'N': str(match['Face']['Confidence'])},
                           'date': {'S': ptr}
                      }
