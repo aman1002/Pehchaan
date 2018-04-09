@@ -1,0 +1,18 @@
+/*.ultra-nav{
+	background-color:  #145888; !important
+}
+
+.navbar-default .navbar-brand{
+	color: white;!important
+}*/
+
+.main {
+
+ 	background-color: rgba(12, 151, 244,0.05);
+    border-radius: 16px;
+    border-bottom: 5px solid rgba(12, 151, 244,0.1);
+}
+
+.btn-info{
+	margin-bottom: 15px;
+}
