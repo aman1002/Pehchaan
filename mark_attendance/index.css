@@ -14,12 +14,23 @@ h1{
 h2{
 	font-weight: bolder;
 }
+
+h4{
+	color:white;
+	font-family: 'Gamja Flower', cursive;
+	font-weight: bold;
+	font-size: 25px;
+	margin: auto;
+}
 .btn-primary{
 	background-color: green;
 }
+.active{
+	border-bottom: 4px solid black;
+}
 
-.txt{
-	
+a{
+	color: white;
 }
 .cent{
 	margin: auto;
