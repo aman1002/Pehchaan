@@ -29,6 +29,57 @@
 		})
 	});
 
+	var s3 = new AWS.S3({
+		apiVersion: '2006-03-01',
+		params: {
+			Bucket: albumBucketName
+		}
+	});
+
+	var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+
+	var fileChooser = document.getElementById("file-chooser");
+    var button = document.getElementById("upload-button");
+    var results = document.getElementById("results");
+    
+   
+
+
+	button.addEventListener('click', function () {
+			  	 
+            var file = fileChooser.files[0];
+            if (file) {
+                results.innerHTML = '';
+                
+                
+                var params = {
+                    Key: 'dated/group1.jpeg',
+                    ContentType: file.type,
+                    Body: file,
+                    ACL: 'public-read'
+                };
+
+                s3.putObject(params, function (err, data) {
+                    if (err) {
+                        results.innerHTML = 'ERROR: ' + err;
+                    }else {
+                        results.innerHTML = ' snapshot uploaded !!!';
+                    }
+                }).on('httpUploadProgress', function (progress) {console.log(progress);});
+
+
+            } else {
+            	 
+                results.innerHTML = 'Nothing to upload.';
+            }
+
+
+           
+            
+
+
+
+     }, false);
 
 </script>
 
