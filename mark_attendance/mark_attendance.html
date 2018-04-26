@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pehchaan(Mark_attendance)</title>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.204.0.min.js"></script>
+
+
+</head>
+<body>
+	<h1 style="color: red; text-align: center;">Attendance marker</h1>
+	<h3 style="color: black; text-align: center;">The face recognition based attendance application</h3>
+	<br><br><br><br>
+
+
+    <label>Choose Snapshot of classroom</label>
+    <input type="file" id="file-chooser" />
+    <button id="upload-button" >Upload class snapshot</button>
+    <div id="results"></div>
+
+<script type="text/javascript">
+	var albumBucketName = '';
+	var bucketRegion = '';
+	var IdentityPoolId = '';
+
+	AWS.config.update({
+		region: bucketRegion,
+		credentials: new AWS.CognitoIdentityCredentials({
+		IdentityPoolId: IdentityPoolId
+		})
+	});
+
+
+</script>
+
+</body>
+</html>
