@@ -92,3 +92,76 @@ border-radius: 15px;
 	border-radius: 15px;
 	background-color: red;
 }
+
+.a1:hover {
+    
+	background-color: #885A24 ;
+	
+	border-right: 3px solid black;
+	
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a2:hover {
+    
+	background-color: #885A24 ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a3:hover {
+    
+	background-color: #885A24;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a4:hover {
+    
+	background-color: #885A24 ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a5:hover {
+    
+	background-color: #885A24;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a6:hover {
+    
+	background-color: #885A24  ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
