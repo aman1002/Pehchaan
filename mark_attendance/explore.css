@@ -66,3 +66,76 @@ h4{
 	margin-bottom: 0px;
 	padding-bottom: 5px;
 }
+
+.a1:hover {
+    
+	background-color: #e67e22 ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a2:hover {
+    
+	background-color: #e67e22 ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a3:hover {
+    
+	background-color: #e67e22;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a4:hover {
+    
+	background-color: #e67e22 ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a5:hover {
+    
+	background-color: #e67e22;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.a6:hover {
+    
+	background-color: #e67e22  ;
+	
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	color: white;
+	border-radius: 8px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
