@@ -11,6 +11,13 @@ h4{
 	font-size: 25px;
 	margin: auto;
 }
+h5{
+	font-family: 'Indie Flower',cursive;
+	font-weight: bold;
+	color: red;
+	font-size: 30px;
+	border-bottom: 3px solid white;
+}
 .active{
 	border-bottom: 3px solid white;
 }
@@ -139,3 +146,16 @@ h4{
 	font-weight: bold;
 
 }
+
+.potato{
+	font-family: 'Gaegu',cursive;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: green;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-radius: 8px;
+}
+
