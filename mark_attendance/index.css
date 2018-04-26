@@ -9,6 +9,8 @@ h1{
 	font-family: 'Gaegu',cursive;
 	color: white;
 	font-size: 100px;
+	margin-top: -10px;
+	text-shadow: 8px 8px 8px black;
 }
 
 h2{
@@ -17,8 +19,8 @@ h2{
 
 h4{
 	color:white;
-	font-family: 'Gamja Flower', cursive;
-	font-weight: bold;
+	font-family: 'Indie Flower', cursive;
+	
 	font-size: 25px;
 	margin: auto;
 }
@@ -31,6 +33,32 @@ h4{
 
 a{
 	color: white;
+	text-align: center;
+
+}
+.a1{
+	min-width: 100px;
+	font-weight: bolder;
+}
+.a2{
+	min-width: 250px;
+	font-weight: bolder;
+}
+.a3{
+	min-width: 230px; 
+	font-weight: bolder;
+}
+.a4{
+	min-width: 210px;
+	font-weight: bolder;
+}
+.a5{
+	min-width: 150px;
+	font-weight: bolder;
+}
+.a6{ 
+	min-width: 150px;
+	font-weight: bolder;
 }
 .cent{
 	margin: auto;
@@ -39,4 +67,28 @@ button{
 	width: 150px;
 	font-family: 'Gaegu',cursive;
 	
+}
+#button1{
+margin-right: 10px;
+border-right: 5px solid black;
+border-bottom: 5px solid black;
+border-radius: 15px;
+}
+#button2{
+margin-left: 10px;
+border-right: 5px solid black;
+border-bottom: 5px solid black;
+border-radius: 15px;
+}
+#button1:hover{
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	border-radius: 15px;
+	background-color: red;
+}
+#button2:hover{
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	border-radius: 15px;
+	background-color: red;
 }
