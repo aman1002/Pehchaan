@@ -1,5 +1,52 @@
 body{
-	background-image: url("3.jpeg");
+	background-image: url("2.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+h4{
+	color:white;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	font-size: 25px;
+	margin: auto;
+}
+.active{
+	border-bottom: 3px solid white;
+}
+.a1{
+	min-width: 100px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+}
+.a2{
+	min-width: 250px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+}
+.a3{
+	min-width: 230px; 
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+}
+.a4{
+	min-width: 210px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+}
+.a5{
+	min-width: 150px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+}
+.a6{ 
+	min-width: 150px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
 }
