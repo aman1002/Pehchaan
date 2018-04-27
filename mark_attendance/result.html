@@ -13,19 +13,19 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-      	<a class="navbar-brand foo" href="#" ><img src="5.png" height="60px" width="90px" ></a>
+      	<a class="navbar-brand foo" href="index.html" ><img src="5.png" height="60px" width="90px" ></a>
       	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       	<span class="navbar-toggler-icon"></span>
       	</button>
       
       	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         	<div class="navbar-nav">
-          		<a class="nav-item nav-link foo a1 " href="#"><h4 id="h41">Home</h4></a>
-          		<a class="nav-item nav-link foo a5 " href="#"><h4 id="h42">Explore</h4></a>
-          		<a class="nav-item nav-link foo a6 " href="#"><h4 id="h43">About Us</h4></a>
-          		<a class="nav-item nav-link foo a2 " href="#"><h4 id="h44">Populate Database</h4></a>
-          		<a class="nav-item nav-link foo a3 " href="#"><h4 id="h45">Mark Attendance</h4></a>
-          		<a class="nav-item nav-link foo a4 active" href="#"><h4 id="h46">Show Results</h4></a>
+          		<a class="nav-item nav-link foo a1 " href="index.html"><h4 id="h41">Home</h4></a>
+          		<a class="nav-item nav-link foo a5 " href="explore.html"><h4 id="h42">Explore</h4></a>
+          		<a class="nav-item nav-link foo a6 " href="about.html"><h4 id="h43">About Us</h4></a>
+          		<a class="nav-item nav-link foo a2 " href="populate.html"><h4 id="h44">Populate Database</h4></a>
+          		<a class="nav-item nav-link foo a3 " href="mark_attendance.html"><h4 id="h45">Mark Attendance</h4></a>
+          		<a class="nav-item nav-link foo a4 active" href="result.html"><h4 id="h46">Show Results</h4></a>
           
         	</div>
       	</div>
@@ -33,13 +33,116 @@
   	<br>
   	<div class="container-fluid">
   		<center>
-  			<button id="upload-button" class='btn btn-primary' style="background-color: green" ><h1>Click to get Results</h1></button>
+  			<button id="upload-button" class='btn btn-primary' style="background-color: green" ><h3>Click to get Results</h3></button>
   		</center>
   		<br><br>
+  		<center>
+  			<div id="results" style="color:white" style="font-size: 40px;"></div>
+			<div id="showData" style="color:white"  style="font-size: 40px;"></div>
+		</center>
+  	</div>
 
+  	<div class="container-fluid">
+  		<center><img id="result"></center>
   	</div>
 
 
+  	<script type="text/javascript">
+	function CreateTableFromJSON(t) {
+    //Adding image to img tag using hardcored url
+    document.getElementById('result').setAttribute('src',"https://s3.amazonaws.com/mausamrest/latest_snapshot_result.jpeg");
+		console.log(t);
+        var myBooks = t;
+        // EXTRACT VALUE FOR HTML HEADER. 
+        // ('Book ID', 'Book Name', 'Category' and 'Price')
+        var col = [];
+        for (var i = 0; i < myBooks.length; i++) {
+            for (var key in myBooks[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < myBooks.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                //if(j!=2)
+                tabCell.innerHTML = myBooks[i][col[j]].S;
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+	var albumBucketName = 'mausamrest';
+	var bucketRegion = 'us-east-1';
+	var IdentityPoolId = 'us-east-1:e14eb975-bd76-4c1e-a585-7d91fb328e3b';
+	var JSONholder;
+
+	AWS.config.update({
+		region: bucketRegion,
+		credentials: new AWS.CognitoIdentityCredentials({
+		IdentityPoolId: IdentityPoolId
+		})
+	});
+
+	var s3 = new AWS.S3({
+		apiVersion: '2006-03-01',
+		params: {
+			Bucket: albumBucketName
+		}
+	});
+
+	var button = document.getElementById("upload-button");
+
+	button.addEventListener('click', function () {
+	
+	var table = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+	
+
+		// Write the item to the table
+		
+  		// Read the item from the table
+  		table.scan(params = {TableName: 'present'}, function(err, data){
+   			if (err) {console.log(err, err.stack); 
+   				//alert(err); 
+   				results.innerHTML = 'ERROR: ' + err;}// an error occurred
+   			else  { 
+   				//alert(data); 
+   				//results.innerHTML = JSON.stringify(data.Items);
+   			}
+  				JSONholder=data.Items;
+  				CreateTableFromJSON(JSONholder);
+
+    		 // print the item data
+  		});
+		
+
+  		
+
+
+ }, false);
+</script>
 
   	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>

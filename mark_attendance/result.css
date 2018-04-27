@@ -1,13 +1,19 @@
  table, th, td {
                 margin:10px 0;
-                border:solid 1px #333;
-                padding:2px 4px;
+                border: solid 4px black;
+                padding:2px 2px 2px 2px;
                 font:15px Verdana;
                 }
 
 th {
-    font-weight:bold;
-    }
+    font-weight: bolder;
+    font-family: cursive;
+    color: white;
+        }
+#result{
+    max-width: 1866px;
+    max-height: 620px;
+}
 
 body{
     background-image: url("2.jpg");
@@ -92,7 +98,7 @@ h4{
     background-color: #e67e22;
     
     border-right: 3px solid black;
-    
+    border-bottom: 3px solid black;
     color: white;
     border-radius: 8px;
     font-size: 17px;
@@ -104,7 +110,7 @@ h4{
     background-color: #e67e22 ;
     
     border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    
     color: white;
     border-radius: 8px;
     font-size: 17px;

@@ -8,7 +8,25 @@ body{
 	max-width: 690px;
 
 }
+.inp{
+	border: 4px solid green;
+	margin-bottom: 5px;
+	
 
+}
+#results{
+	font-family: 'Gaegu',cursive;
+	margin-top: 10px;
+	font-weight: bold ;
+	font-size: 25px;
+	color: white;
+}
+.lbl{
+	font-size: 25px;
+	font-weight: bolder;
+	font-family: 'Gaegu',cursive;
+	color: black;
+}
 h4{
 	color:white;
 	font-family: 'Indie Flower', cursive;
@@ -127,4 +145,14 @@ h4{
 	font-size: 17px;
 	font-weight: bold;
 
+}
+.btn-primary{
+
+	background-color: green;
+	border: 2px solid black;
+}
+
+
+.btn-primary:hover{
+	background-color: red;
 }

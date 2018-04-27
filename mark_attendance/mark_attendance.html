@@ -15,19 +15,19 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-      	<a class="navbar-brand foo" href="#" ><img src="5.png" height="60px" width="90px" ></a>
+      	<a class="navbar-brand foo" href="index.html" ><img src="5.png" height="60px" width="90px" ></a>
       	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       	<span class="navbar-toggler-icon"></span>
       	</button>
       
       	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         	<div class="navbar-nav">
-          		<a class="nav-item nav-link foo a1 " href="#"><h4 id="h41">Home</h4></a>
-          		<a class="nav-item nav-link foo a5 " href="#"><h4 id="h42">Explore</h4></a>
-          		<a class="nav-item nav-link foo a6 " href="#"><h4 id="h43">About Us</h4></a>
-          		<a class="nav-item nav-link foo a2 " href="#"><h4 id="h44">Populate Database</h4></a>
-          		<a class="nav-item nav-link foo a3 active" href="#"><h4 id="h45">Mark Attendance</h4></a>
-          		<a class="nav-item nav-link foo a4" href="#"><h4 id="h46">Show Results</h4></a>
+          		<a class="nav-item nav-link foo a1 " href="index.html"><h4 id="h41">Home</h4></a>
+          		<a class="nav-item nav-link foo a5 " href="explore.html"><h4 id="h42">Explore</h4></a>
+          		<a class="nav-item nav-link foo a6 " href="about.html"><h4 id="h43">About Us</h4></a>
+          		<a class="nav-item nav-link foo a2 " href="populate.html"><h4 id="h44">Populate Database</h4></a>
+          		<a class="nav-item nav-link foo a3 active" href="mark_attendance.html"><h4 id="h45">Mark Attendance</h4></a>
+          		<a class="nav-item nav-link foo a4" href="result.html"><h4 id="h46">Show Results</h4></a>
           
         	</div>
       	</div>
@@ -50,14 +50,14 @@
   	</div>
   
 </div> 
-<div class="container-fluid foo"><h3><center>Mark Attendance</center></h3></div>
+<div class="container-fluid foo"><h3><center><div id="hm">Mark Attendance</div></center></h3></div>
 <div class="container-fluid foo">
 	<center><img id="tomato"></center>
 </div>
 
 
 <script type="text/javascript">
-	var albumBucketName = 'mausamrest';
+	var albumBucketName = 'data-coll';
 	var bucketRegion = 'us-east-1';
 	var IdentityPoolId = 'us-east-1:e14eb975-bd76-4c1e-a585-7d91fb328e3b';
 
@@ -75,13 +75,13 @@
 		}
 	});
 
-	var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+	
 
 	var fileChooser = document.getElementById("file-chooser");
     var button = document.getElementById("upload-button");
     var results = document.getElementById("results");
     var pro = document.getElementById("tomato");
-    pro.src = "5.png";
+    pro.src = "pea.png";
 
     function previewFile() {
 			var filet    = document.querySelector('input[type=file]').files[0];

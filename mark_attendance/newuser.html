@@ -15,59 +15,60 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-      	<a class="navbar-brand foo" href="#" ><img src="5.png" height="60px" width="90px" ></a>
+      	<a class="navbar-brand foo" href="index.html" ><img src="5.png" height="60px" width="90px" ></a>
       	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       	<span class="navbar-toggler-icon"></span>
       	</button>
       
       	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         	<div class="navbar-nav">
-          		<a class="nav-item nav-link foo a1 " href="#"><h4 id="h41">Home</h4></a>
-          		<a class="nav-item nav-link foo a5 " href="#"><h4 id="h42">Explore</h4></a>
-          		<a class="nav-item nav-link foo a6 " href="#"><h4 id="h43">About Us</h4></a>
-          		<a class="nav-item nav-link foo a2 active" href="#"><h4 id="h44">Populate Database</h4></a>
-          		<a class="nav-item nav-link foo a3" href="#"><h4 id="h45">Mark Attendance</h4></a>
-          		<a class="nav-item nav-link foo a4" href="#"><h4 id="h46">Show Results</h4></a>
+          		<a class="nav-item nav-link foo a1 " href="index.html"><h4 id="h41">Home</h4></a>
+          		<a class="nav-item nav-link foo a5 " href="explore.html"><h4 id="h42">Explore</h4></a>
+          		<a class="nav-item nav-link foo a6 " href="about.html"><h4 id="h43">About Us</h4></a>
+          		<a class="nav-item nav-link foo a2 active" href="populate.html"><h4 id="h44">Populate Database</h4></a>
+          		<a class="nav-item nav-link foo a3" href="mark_attendance.html"><h4 id="h45">Mark Attendance</h4></a>
+          		<a class="nav-item nav-link foo a4" href="result.html"><h4 id="h46">Show Results</h4></a>
           
         	</div>
       	</div>
   	</nav>
   	<br><br>
 
-  	<div class="row">
+  	<div class="row foo" >
   		<div class="col-lg-5" id="elephant">
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-4"><center><label>Full Name:</label></center></div>
-  		<div class="col-lg-4"><center><label>Roll number:</label></center></div>
+  		<div class="col-lg-4"><center><label class="lbl">Full Name:</label></center></div>
+  		<div class="col-lg-4"><center><label class="lbl">Roll number:</label></center></div>
   	</div>
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-4"><center><input type="text" id="fname"></center></div>
-  		<div class="col-lg-4"><center><input type="text" id="roll_input"  /></center></div>
+  		<div class="col-lg-4"><center><input class="inp" type="text" id="fname"></center></div>
+  		<div class="col-lg-4"><center><input class="inp" type="text" id="roll_input"  /></center></div>
   	</div>
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-4"><center><label>Class:</label></center></div>
-  		<div class="col-lg-4"><center><label>Section:</label></center></div>
+  		<div class="col-lg-4"><center><label class="lbl">Class:</label></center></div>
+  		<div class="col-lg-4"><center><label class="lbl">Section:</label></center></div>
   	</div>
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-4"><center><input type="text" id="cls"></center></div>
-  		<div class="col-lg-4"><center><input type="text" id="sec"></center></div>
+  		<div class="col-lg-4"><center><input class="inp" type="text" id="cls"></center></div>
+  		<div class="col-lg-4"><center><input class="inp" type="text" id="sec"></center></div>
   	</div>
+    <br>
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-8"><center><label>Choose photo of student</label></center></div>
+  		<div class="col-lg-8"><center><label class="lbl">Choose photo of student</label></center></div>
   	</div>
   	<div class="row">
-  		<div class="col-lg-4"></div>
-  		<div class="col-lg-8"><center><input type="file"  id="file-chooser" onchange="previewFile()"></center></div>
+  		<div class="col-lg-3"></div>
+  		<div class="col-lg-6"><center><label class="btn btn-sm btn-primary" ><input type="file"  id="file-chooser" onchange="previewFile()"></label></center></div>
   	</div>
   	<br><br>
   	<div class="row">
   		<div class="col-lg-2"></div>
-  		<div class="col-lg-8"><center><button id="upload-button" >Upload class snapshot</button></center></div>
+  		<div class="col-lg-8"><center><button class='btn btn-primary'  id="upload-button" >Upload class snapshot</button></center></div>
   	</div>
     
     <div class="row">
@@ -90,7 +91,7 @@
     
 
     <script type="text/javascript">
-		var albumBucketName = 'mausamrest';
+		var albumBucketName = 'class_collection';
 		var bucketRegion = 'us-east-1';
 		var IdentityPoolId = 'us-east-1:e14eb975-bd76-4c1e-a585-7d91fb328e3b';
 

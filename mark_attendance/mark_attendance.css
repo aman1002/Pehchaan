@@ -11,6 +11,24 @@ body{
 
 }
 
+#results{
+	font-family: 'Gaegu',cursive;
+	margin-top: 10px;
+	font-weight: bold ;
+	font-size: 25px;
+	color: white;
+}
+
+
+
+h3{
+	color: white;
+	font-family: 'Gaegu',cursive;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+
+}
+
 h4{
 	color:white;
 	font-family: 'Indie Flower', cursive;
