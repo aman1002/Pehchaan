@@ -10,8 +10,27 @@ h4{
 	font-size: 25px;
 	margin: auto;
 }
+h1{
+	color: black;
+	font-family: 'Gaegu', cursive;
+	font-weight: bolder;
+	font-size: 45px;
+}
+
+
+p{
+	color:white;
+	font-family:  cursive;
+
+}
+li{
+	color:white;
+	font-family:  cursive;
+	margin: auto;
+
+}
 .active{
-	border-bottom: 4px solid white;
+	border-bottom: 4px solid green;
 }
 .a1{
 	min-width: 100px;
@@ -121,4 +140,7 @@ h4{
 	font-size: 17px;
 	font-weight: bold;
 
+}
+.box{
+	padding-left: 20px;
 }
