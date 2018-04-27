@@ -1,0 +1,12 @@
+body{
+	background-image: url("4.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+h4{
+	color:white;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	font-size: 25px;
+	margin: auto;
+}
