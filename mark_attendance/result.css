@@ -1,0 +1,138 @@
+ table, th, td {
+                margin:10px 0;
+                border:solid 1px #333;
+                padding:2px 4px;
+                font:15px Verdana;
+                }
+
+th {
+    font-weight:bold;
+    }
+
+body{
+    background-image: url("2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+h4{
+    color:white;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    margin: auto;
+}
+.active{
+    border-bottom: 4px solid black;
+}
+.a1{
+    min-width: 100px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+.a2{
+    min-width: 250px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+.a3{
+    min-width: 230px; 
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+.a4{
+    min-width: 210px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+.a5{
+    min-width: 150px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+.a6{ 
+    min-width: 150px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+
+.a1:hover {
+    
+    background-color: #e67e22 ;
+    
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.a2:hover {
+    
+    background-color: #e67e22 ;
+    
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.a3:hover {
+    
+    background-color: #e67e22;
+    
+    border-right: 3px solid black;
+    
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.a4:hover {
+    
+    background-color: #e67e22 ;
+    
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.a5:hover {
+    
+    background-color: #e67e22;
+    
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.a6:hover {
+    
+    background-color: #e67e22  ;
+    
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+    
