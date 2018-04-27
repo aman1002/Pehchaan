@@ -1,5 +1,5 @@
 body{
-	background-image: url("1.jpg");
+	background-image: url("3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 
@@ -12,7 +12,7 @@ h4{
 	margin: auto;
 }
 .active{
-	border-bottom: 4px solid black;
+	border-bottom: 4px solid white;
 }
 
 .a1{
@@ -123,4 +123,18 @@ h4{
 	font-size: 17px;
 	font-weight: bold;
 
+}
+.card-body{
+	background-color: black;
+}
+
+.potato {
+	background-color: green;
+}
+.potato:hover{
+	background-color: red;
+}
+.card{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
