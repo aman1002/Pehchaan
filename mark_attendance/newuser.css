@@ -1,8 +1,14 @@
 body{
-	background-image: url("4.jpeg");
+	background-image: url("2.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+#tomato{
+	max-height: 505px;
+	max-width: 690px;
+
+}
+
 h4{
 	color:white;
 	font-family: 'Indie Flower', cursive;
@@ -11,7 +17,7 @@ h4{
 	margin: auto;
 }
 .active{
-	border-bottom: 4px solid green;
+	border-bottom: 4px solid black;
 }
 .a1{
 	min-width: 100px;
@@ -67,7 +73,7 @@ h4{
 	background-color: #e67e22 ;
 	
 	border-right: 3px solid black;
-	border-bottom: 3px solid black;
+	
 	color: white;
 	border-radius: 8px;
 	font-size: 17px;
@@ -115,7 +121,7 @@ h4{
 	background-color: #e67e22  ;
 	
 	border-right: 3px solid black;
-	
+	border-bottom: 3px solid black;
 	color: white;
 	border-radius: 8px;
 	font-size: 17px;

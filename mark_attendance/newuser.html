@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.204.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="newuser.css">
@@ -33,59 +34,162 @@
   	</nav>
   	<br><br>
 
-
-  	<!-- <div class="row foo">
-  		<div class="col-lg-8">
-  			<h2>Enter details</h2>
-  			<label>Roll number:</label>
-			<input type="text" id="roll_input"  />
-  			<label>photo of student/employee</label>
-			<input type="file" id="file-chooser" />
-  		</div>
-  	</div> -->
-
-  	<form>
-  		<div class="row">
-  			<div class="col-lg-1"></div>
-    		<div class="col-lg-2">
-    			<center><label>Full Name</label></center>
-      			<input type="text" class="form-control" placeholder="Full name">
-   			 </div>
-    		<div class="col-lg-2">
-    			<center><label>Roll number</label></center>
-      			<input type="text" class="form-control" placeholder="Roll number">
-    		</div>
-    		<div class="col-lg-7">
-    			
-    		</div>
-  		</div>
-  		<div class="row">
-  			<div class="col-lg-1"></div>
-    		<div class="col-lg-2">
-    			<center><label>Class/Department</label></center>
-      			<input type="text" class="form-control" placeholder="Class/Department">
-   			 </div>
-    		<div class="col-lg-2">
-    			<center><label>Section/Sub-department</label></center>
-      			<input type="text" class="form-control" placeholder="Section/Sub-department">
-    		</div>
-  		</div>
-  		<div class="row">
-  			<div class="col-lg-1"></div>
-  			<div class="col-lg-2">
-  				<label>Photo of student/employee</label>
-				<center><input type="file" id="file-chooser" /></center>
-  			</div>
-  			<div class="col-lg-2">
-  				<center><label>Index image with data</label></center>
-  				<center><button id="upload-button" >Index with data</button></center>
-  			</div>
-  		</div>
-	</form>
+  	<div class="row">
+  		<div class="col-lg-5" id="elephant">
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-4"><center><label>Full Name:</label></center></div>
+  		<div class="col-lg-4"><center><label>Roll number:</label></center></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-4"><center><input type="text" id="fname"></center></div>
+  		<div class="col-lg-4"><center><input type="text" id="roll_input"  /></center></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-4"><center><label>Class:</label></center></div>
+  		<div class="col-lg-4"><center><label>Section:</label></center></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-4"><center><input type="text" id="cls"></center></div>
+  		<div class="col-lg-4"><center><input type="text" id="sec"></center></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-8"><center><label>Choose photo of student</label></center></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-4"></div>
+  		<div class="col-lg-8"><center><input type="file"  id="file-chooser" onchange="previewFile()"></center></div>
+  	</div>
+  	<br><br>
+  	<div class="row">
+  		<div class="col-lg-2"></div>
+  		<div class="col-lg-8"><center><button id="upload-button" >Upload class snapshot</button></center></div>
+  	</div>
+    
+    <div class="row">
+    	<div class="col-lg-2"></div>
+    	<div class="col-lg-8"><center><div id="results"></div></center></div>
+    </div>
 
 
+	</div>
+
+	<div class="col-lg-7">
+		<img   id="tomato">
+	</div>
+</div>
+	
+	
+
+    
+    
+    
+
+    <script type="text/javascript">
+	var albumBucketName = 'mausamrest';
+	var bucketRegion = 'us-east-1';
+	var IdentityPoolId = 'us-east-1:e14eb975-bd76-4c1e-a585-7d91fb328e3b';
+
+	AWS.config.update({
+		region: bucketRegion,
+		credentials: new AWS.CognitoIdentityCredentials({
+		IdentityPoolId: IdentityPoolId
+		})
+	});
+
+	var s3 = new AWS.S3({
+		apiVersion: '2006-03-01',
+		params: {
+			Bucket: albumBucketName
+		}
+	});
+
+	var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+
+	var fileChooser = document.getElementById("file-chooser");
+    var button = document.getElementById("upload-button");
+    var results = document.getElementById("results");
+    var pro = document.getElementById("tomato");
+    pro.src = "5.png";
+    
+
+    function previewFile() {
+		var filet    = document.querySelector('input[type=file]').files[0];
+  		var preview = document.getElementById('tomato');
+  		var reader  = new FileReader();
+
+  		reader.onloadend = function () {
+    		preview.src = reader.result;
+  		}
+
+  		if (filet) {
+    		reader.readAsDataURL(filet);
+  		} else {
+    		preview.src = "";
+  		}
+	}
+    
+   
 
 
+	button.addEventListener('click', function () {
+		var Roll = document.getElementById("roll_input").value;
+		var FNAME = document.getElementById("fname").value;
+		var CLS = document.getElementById("cls").value;
+		var SEC = document.getElementById("sec").value;
+		var file = fileChooser.files[0];	  	 
+            
+            if (file) {
+                                
+                results.innerHTML = '';
+                
+                var objKey = file.name;
+                var realobj = 'index/'+objKey.toString();
+                var params = {
+                    Key: realobj,
+                    ContentType: file.type,
+                    Metadata: {
+   						"roll_number": Roll,
+   						"fullname": FNAME,
+   						"class": CLS,
+   						"section": SEC 
+   					},
+                    Body: file,
+                    ACL: 'public-read'
+                };
+
+                s3.putObject(params, function (err, data) {
+                    if (err) {
+                        results.innerHTML = 'ERROR: ' + err;
+                    }else {
+                        results.innerHTML = ' snapshot uploaded !!!';
+                    }
+                }).on('httpUploadProgress', function (progress) {console.log(progress);});
+
+
+            } else {
+            	 
+                results.innerHTML = 'Nothing to upload.';
+            }
+
+
+           
+            
+
+
+
+     }, false);
+
+
+  	
+
+	
+
+</script>
 <!--scripts-->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
