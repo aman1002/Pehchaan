@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="about.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
@@ -20,8 +21,8 @@
       	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         	<div class="navbar-nav">
           		<a class="nav-item nav-link foo a1 " href="#"><h4 id="h41">Home</h4></a>
-          		<a class="nav-item nav-link foo a5 active" href="#"><h4 id="h42">Explore</h4></a>
-          		<a class="nav-item nav-link foo a6" href="#"><h4 id="h43">About Us</h4></a>
+          		<a class="nav-item nav-link foo a5 " href="#"><h4 id="h42">Explore</h4></a>
+          		<a class="nav-item nav-link foo a6 active" href="#"><h4 id="h43">About Us</h4></a>
           		<a class="nav-item nav-link foo a2" href="#"><h4 id="h44">Populate Database</h4></a>
           		<a class="nav-item nav-link foo a3" href="#"><h4 id="h45">Mark Attendance</h4></a>
           		<a class="nav-item nav-link foo a4" href="#"><h4 id="h46">Show Results</h4></a>
@@ -30,5 +31,16 @@
       	</div>
   	</nav>
 
+
+
+<!--scripts-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+  	<script type="text/javascript">
+    	window.sr = ScrollReveal();
+      	sr.reveal('.foo', { duration: 2500 });
+      	sr.reveal('.bar', { duration: 4000 });
+  	</script>
 </body>
 </html>
